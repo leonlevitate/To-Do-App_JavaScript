@@ -21,3 +21,24 @@ ul li {
     transition: 0.3s; 
 
 }
+
+ul li:nth-child(odd) {
+    background-color: antiquewhite
+}
+
+ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: white;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 15px;
+    transform: rotate(45deg);
+    height:15px;
+    width:10px;
+}
+
+input {
+    min-width: 500px;
+}
