@@ -1,5 +1,25 @@
+// Creating the Close buttons for lists that are not created with the main function
+
+var myList = document.getElementsByTagName("li");
+var index;
+
+for(index = 0; index < myList.length; index++){
+    var aSpanTag = document.createElement("SPAN");
+    var someText =document.createTextNode("\u00D7");
+    aSpanTag.className = "close";
+    aSpanTag.appendChild(someText);
+    myList[index].appendChild(aSpanTag);
+}
 // CLOSE BUTTON
 var closeButton = document.getElementsByClassName("close");
+
+for(i = 0; i < closeButton.length; i++){
+    closeButton[i].onclick = function(){
+        var theDiv = this.parentElement;
+        theDiv.style.display = "none"
+    }
+}
+
 
 // Creating Todo Function
 function createNewElement() {
@@ -25,13 +45,13 @@ function createNewElement() {
 
 // Remove items when click on SPAN CLOSE BUTTON
 
-    for(i = 0; i < closeButton.length; i++){
-        closeButton[i].onclick = function(){
-            var theDiv = this.parentElement;
-            theDiv.style.display = "none"
-        }
-    }
 
 }
 
-createNewElement();
+var ulList = document.querySelector('ul');
+ulList.addEventListener('click', function(event) {
+
+    if(event.target.tagName === " LI"){
+        event.target.classList.toggle('checked');
+    }
+});
