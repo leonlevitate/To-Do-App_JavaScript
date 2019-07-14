@@ -1,5 +1,7 @@
+// CLOSE BUTTON
 var closeButton = document.getElementsByClassName("close");
 
+// Creating Todo Function
 function createNewElement() {
     var li = document.createElement('li');
     var theInputValue = document.getElementById("input").value;
